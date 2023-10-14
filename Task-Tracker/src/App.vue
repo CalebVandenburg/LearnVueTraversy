@@ -7,11 +7,14 @@
     </div>
     <!-- tasks automatically calls data -->
     <Tasks :tasks="tasks" @toggle-reminder="toggleReminder" @delete-task="deleteTask"/>
+    <router-view></router-view>
+    <Footer />
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue';
+import Footer from './components/Footer.vue';
 import Tasks from './components/Tasks.vue';
 import AddTask from './components/AddTask.vue';
 import { toHandlers } from 'vue';
@@ -20,7 +23,8 @@ export default {
   components: {
     Header,
     Tasks,
-    AddTask
+    AddTask,
+    Footer
   },
   data() {
     return {
